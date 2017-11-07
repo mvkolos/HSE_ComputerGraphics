@@ -31,7 +31,7 @@ namespace CG_3_Kolos {
 			bm = gcnew Bitmap(pictureBox->Width, pictureBox->Height);
 			pictureBox->Image = bm;
 			pictureBox->Invalidate();
-			t = gcnew BezierTool(bm);
+			t = gcnew NBezierTool(bm);
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -68,15 +68,15 @@ namespace CG_3_Kolos {
 	private: System::Windows::Forms::PictureBox^  pictureBox;
 	protected:
 		Tool ^t;
-		void NBezier(System::Drawing::Graphics ^g);
+		
+		/*void NBezier(System::Drawing::Graphics ^g);
 		void Bezier(System::Drawing::Graphics ^g);
 		void CubicBezier(System::Drawing::Graphics ^g, int offset);
 		void ComposedBezier(System::Drawing::Graphics ^g);
 		void ContinueLine();
 		void CloseBezier(System::Drawing::Graphics ^ g);
-		void drawCurve(System::Drawing::Graphics ^ g,
-			System::Collections::Generic::List<Point> ^points);
-		void BezierDeCasteljau(System::Drawing::Graphics^ g);
+		
+		void BezierDeCasteljau(System::Drawing::Graphics^ g);*/
 		void ElemntaryBSpline(System::Collections::Generic::List<Point> ^p);
 		float* CoeffsBSpline(float t);
 		Point CoordBSpline(System::Collections::Generic::List<Point> ^p, int i);
@@ -85,9 +85,10 @@ namespace CG_3_Kolos {
 		/*Point DeBoor(int k, int degree, int i, float x, float* knots, System::Collections::Generic::List<Point>^ ctrlPoints);
 		void drawDeBoor(Graphics^g);*/
 
-		float deCasteljauX(int i, int j, float t);
-		float deCasteljauY(int i, int j, float t);
-
+		/*float deCasteljauX(int i, int j, float t);
+		float deCasteljauY(int i, int j, float t);*/
+		void drawCurve(System::Drawing::Graphics ^ g,
+			System::Collections::Generic::List<Point> ^points);
 		System::Collections::Generic::List<Point> points;
 		System::Collections::Generic::List<Point> closure;
 		System::Collections::Generic::List<Point> ^bezier;
@@ -151,6 +152,8 @@ namespace CG_3_Kolos {
 			this->pictureBox->Click += gcnew System::EventHandler(this, &SplinesForm::pictureBox_Click);
 			this->pictureBox->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &SplinesForm::pictureBox_Paint);
 			this->pictureBox->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &SplinesForm::pictureBox_MouseDown);
+			this->pictureBox->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &SplinesForm::pictureBox_MouseMove);
+			this->pictureBox->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &SplinesForm::pictureBox_MouseUp);
 			// 
 			// buttonClose
 			// 
@@ -232,7 +235,7 @@ namespace CG_3_Kolos {
 			// 
 			// button_b_spline
 			// 
-			this->button_b_spline->Location = System::Drawing::Point(481, 334);
+			this->button_b_spline->Location = System::Drawing::Point(481, 333);
 			this->button_b_spline->Name = L"button_b_spline";
 			this->button_b_spline->Size = System::Drawing::Size(100, 23);
 			this->button_b_spline->TabIndex = 8;
@@ -248,6 +251,7 @@ namespace CG_3_Kolos {
 			this->button2->TabIndex = 9;
 			this->button2->Text = L"Move";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &SplinesForm::button2_Click);
 			// 
 			// SplinesForm
 			// 
@@ -283,7 +287,7 @@ namespace CG_3_Kolos {
 		Graphics^ g = Graphics::FromImage(bm);
 		if (pointCount > 3)
 		{
-			CloseBezier(g);
+			//CloseBezier(g);
 		}
 		/*
 		BezierDeCasteljau(g);
@@ -292,44 +296,28 @@ namespace CG_3_Kolos {
 	private: System::Void pictureBox_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
 	{
 		t->HandleMouseDown(e);
-		/*pointCount++;
-		Point p = pictureBox->PointToClient(Cursor->Position);
-		points.Add(p);
-		Graphics^ g = Graphics::FromImage(bm);
-		g->DrawEllipse(Pens::Gray, p.X, p.Y, 3, 3);
-		if (composed)
+		if (e->Button == System::Windows::Forms::MouseButtons::Left)
 		{
-			if (pointCount > 3 && pointCount % 2 == 0)
-			{
-				ContinueLine();
-				ComposedBezier(g);
-			}
-
+			pictureBox->Invalidate();
 		}
-		else {
-			clear();
-			NBezier(g);
-		}*/
-
-
-		//textBoxDebug->Text = (readyToClose).ToString();
-		pictureBox->Invalidate();
 	}
 
 	private: System::Void buttonClear_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		clear();
+		t->clear();
 	}
 
 	private: System::Void checkBoxAlg_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		deCasteljau = !deCasteljau;
+		t->deCasteljau = !t->deCasteljau;
+		pictureBox->Invalidate();
 	}
 	private: System::Void checkBoxComposed_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		composed = !composed;
+		t = gcnew ComposedBezierTool(bm);
+		pictureBox->Invalidate();
 	}
 	private: System::Void buttonBezier_Click(System::Object^  sender, System::EventArgs^  e) {
-		clear();
-		NBezier(Graphics::FromImage(bm));
+		/*clear();
+		NBezier(Graphics::FromImage(bm));*/
 	}
 
 	private: System::Void aboutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -341,12 +329,15 @@ namespace CG_3_Kolos {
 		MessageBox::Show(text, "О программе", MessageBoxButtons::OK,
 			MessageBoxIcon::Asterisk);
 	}
-	private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
-		deCasteljau = true;
+			 //TO DO
+	private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {//draw decast. overlay
+		//deCasteljau = true;
 		//NBezier(Graphics::FromImage(bm));
-		BezierDeCasteljau(Graphics::FromImage(bm));
+		//BezierDeCasteljau(Graphics::FromImage(bm));
 	}
-	private: System::Void pictureBox_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	private: System::Void pictureBox_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) 
+	{
+		t->Draw(e);
 	}
 	private: System::Void button_b_spline_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (points.Count > 3)
@@ -361,5 +352,21 @@ namespace CG_3_Kolos {
 			drawCurve(Graphics::FromImage(bm), b_spline);
 		}
 	}
-	};
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (t) {
+			t->canMove = true;
+		}
+	}
+private: System::Void pictureBox_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+	Cursor=t->HandleMouseMove(e);
+	
+	if (e->Button == System::Windows::Forms::MouseButtons::Left)
+	{
+		pictureBox->Invalidate();
+	}
+}
+private: System::Void pictureBox_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+	t->HandleMouseUp(e);
+}
+};
 }

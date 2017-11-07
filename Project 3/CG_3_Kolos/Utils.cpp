@@ -71,7 +71,7 @@ unsigned int Utils::factorial(int n)
 
 }
 
-float BezierTool::deCasteljauX(int i, int j, float t)
+float NBezierTool::deCasteljauX(int i, int j, float t)
 {
 	if (i == 1) {
 		return (1 - t) * points[j].X + t * points[j + 1].X;
@@ -79,7 +79,7 @@ float BezierTool::deCasteljauX(int i, int j, float t)
 	return (1 - t) * deCasteljauX(i - 1, j, t) + t * deCasteljauX(i - 1, j + 1, t);
 }
 
-float BezierTool::deCasteljauY(int i, int j, float t)
+float NBezierTool::deCasteljauY(int i, int j, float t)
 {
 	if (i == 1) {
 		return (1 - t) * points[j].Y + t * points[j + 1].Y;
@@ -87,19 +87,18 @@ float BezierTool::deCasteljauY(int i, int j, float t)
 	return (1 - t) * deCasteljauY(i - 1, j, t) + t * deCasteljauY(i - 1, j + 1, t);
 }
 
-void BezierTool::NBezier(System::Drawing::Graphics ^ g)
+//void NBezierTool::NBezier(System::Drawing::Graphics ^ g)
+//{
+//}
+
+void NBezierTool::drawSpline(System::Drawing::Graphics ^ g)
 {
 	if (points.Count < 2)
 	{
 		return;
 	}
-	if (!bezier)
-	{
-		bezier = gcnew System::Collections::Generic::List<System::Drawing::Point>();
-	}
-	else
-	{
-		bezier->Clear();
+	if (spline) {
+		spline->Clear();
 	}
 	if (deCasteljau)
 	{
@@ -111,7 +110,23 @@ void BezierTool::NBezier(System::Drawing::Graphics ^ g)
 	}
 }
 
-void BezierTool::Bezier(System::Drawing::Graphics ^ g)
+//void NBezierTool::drawBezier(System::Drawing::Graphics ^ g)
+//{
+//	/*if (composed)
+//	{
+//		if (point_count > 3&& point_count % 2 == 0)
+//		{
+//			ContinueLine();
+//			ComposedBezier(g);
+//		}
+//
+//	}*/
+//
+//	NBezier(g);
+//
+//}
+
+void NBezierTool::Bezier(System::Drawing::Graphics ^ g)
 {
 	int n = points.Count;
 	float** coord = new float*[Utils::DIMENSIONS];
@@ -155,15 +170,15 @@ void BezierTool::Bezier(System::Drawing::Graphics ^ g)
 		}
 
 		float** res = Utils::MatMul(step1, tt, shape1, t_shape);
-		bezier->Add(System::Drawing::Point(res[0][0], res[1][0]));
+		spline->Add(System::Drawing::Point(res[0][0], res[1][0]));
 		t += step;
 	}
-	drawCurve(g, bezier);
+	drawCurve(g, spline);
 }
 
-void BezierTool::CubicBezier(System::Drawing::Graphics ^ g, int offset)
-{
-	bezier->Clear();
+void ComposedBezierTool::CubicBezier(System::Drawing::Graphics ^ g, int offset)
+{	
+	//bezier->Clear();
 	int n = 4;
 	float** coord = new float*[Utils::DIMENSIONS];
 
@@ -201,25 +216,28 @@ void BezierTool::CubicBezier(System::Drawing::Graphics ^ g, int offset)
 
 		float** res = Utils::MatMul(step1, tt, shape1, t_shape);
 		//g->DrawRectangle(Pens::Black, (int)res[0][0], (int)res[1][0], 1, 1);
-		bezier->Add(System::Drawing::Point(res[0][0], res[1][0]));
+		spline->Add(System::Drawing::Point(res[0][0], res[1][0]));
 		t += 0.01f;
 	}
-	drawCurve(g, bezier);
+	drawCurve(g, spline);
 }
 
-void BezierTool::ComposedBezier(System::Drawing::Graphics ^ g)
+void ComposedBezierTool::ComposedBezier(System::Drawing::Graphics ^ g)
 {
-	int n = points.Count;
+	
 
-	for (int i = 0; i <n - 3; i += 3)
+	int n = points.Count;// point_count;
+	spline->Clear();
+	for (int i = 0; i <n-3; i += 3)
 	{
 		CubicBezier(g, i);
 	}
 }
 
-void BezierTool::ContinueLine()
+void ComposedBezierTool::ContinueLine()
 {
 	System::Drawing::Point last = points[points.Count - 1];
+	
 	System::Drawing::Point prelast = points[points.Count - 2];
 
 	float deltaX = last.X - prelast.X;
@@ -228,11 +246,13 @@ void BezierTool::ContinueLine()
 	System::Drawing::Point next = System::Drawing::Point(last.X + deltaX, last.Y + deltaY);
 	System::Drawing::Graphics^g = System::Drawing::Graphics::FromImage(bm);
 	g->FillEllipse(System::Drawing::Brushes::Red, next.X, next.Y, 2, 2);
-	//pictureBox->Invalidate();
+	special_indices.Add(points.Count);
+	//poin
 	points.Add(next);
 }
 
-void BezierTool::CloseBezier(System::Drawing::Graphics ^ g)
+
+void ComposedBezierTool::CloseBezier(System::Drawing::Graphics ^ g)
 {
 	if (points.Count % 2 != 0)
 	{
@@ -253,19 +273,36 @@ void BezierTool::CloseBezier(System::Drawing::Graphics ^ g)
 	CubicBezier(g, -1);
 }
 
-void BezierTool::BezierDeCasteljau(System::Drawing::Graphics ^ g)
+void ComposedBezierTool::drawSpline(System::Drawing::Graphics ^ g)
 {
-	bezier->Clear();
+	if (point_count >3&&point_count % 2 == 0)
+	{
+		ContinueLine();
+		ComposedBezier(g);
+	}
+}
+
+
+
+//System::Windows::Forms::Cursor ^ ComposedBezierTool::HandleMouseMove(System::Windows::Forms::MouseEventArgs ^ e)
+//{
+//	throw gcnew System::NotImplementedException();
+//	// TODO: вставьте здесь оператор return
+//}
+
+void NBezierTool::BezierDeCasteljau(System::Drawing::Graphics ^ g)
+{
+	spline->Clear();
 	float delta = 0.01f;
 	int order = points.Count - 1;
 	for (float t = 0; t <= 1; t += delta) {
 
-		bezier->Add(System::Drawing::Point(deCasteljauX(order, 0, t), deCasteljauY(order, 0, t)));
+		spline->Add(System::Drawing::Point(deCasteljauX(order, 0, t), deCasteljauY(order, 0, t)));
 	}
-	drawCurve(g, bezier);
+	drawCurve(g, spline);
 }
 
-bool MoveTool::Bounded(System::Drawing::Point &p, System::Drawing::Point &seed, int delta)
+bool Tool::Bounded(System::Drawing::Point &p, System::Drawing::Point &seed, int delta)
 {
 	if (p.X > seed.X - delta&&
 		p.X<seed.X + delta&&
@@ -277,11 +314,11 @@ bool MoveTool::Bounded(System::Drawing::Point &p, System::Drawing::Point &seed, 
 	return false;
 }
 
-int MoveTool::getClosest(System::Drawing::Point &current)
+int Tool::getClosest(System::Drawing::Point &current,int radius)
 {
 	for (int i = 0; i < points.Count; i++)
 	{
-		if (Bounded(current, points[i], 5))
+		if (Bounded(current, points[i], radius))
 		{
 			return i;
 		}
@@ -289,22 +326,69 @@ int MoveTool::getClosest(System::Drawing::Point &current)
 	return -1;
 }
 
-System::Windows::Forms::Cursor ^ MoveTool::HandleMouseMove(System::Windows::Forms::MouseEventArgs ^ e)
-{
-	return System::Windows::Forms::Cursors::Arrow;
-}
+//System::Windows::Forms::Cursor ^ NBezierTool::HandleMouseMove(System::Windows::Forms::MouseEventArgs ^ e)
+//{
+//	System::Windows::Forms::Cursor ^c = System::Windows::Forms::Cursors::Arrow;
+//	System::Drawing::Point p = System::Drawing::Point(e->X, e->Y);
+//	if (canMove)
+//	{
+//		if (getClosest(p,5) >= 0)
+//		{
+//			c = System::Windows::Forms::Cursors::Hand;
+//		}
+//	}
+//	if (e->Button == System::Windows::Forms::MouseButtons::Left&&onMove)
+//	{
+//		points[indexToMove] = p;
+//		
+//		return System::Windows::Forms::Cursors::Hand;
+//
+//	}
+//	return c;
+//}
 
-void MoveTool::HandleMouseDown(System::Windows::Forms::MouseEventArgs ^ e)
-{
-	if (e->Button == System::Windows::Forms::MouseButtons::Left)
-	{
-		int index = getClosest(System::Drawing::Point(e->X, e->Y));
-		if (index > 0)
+//void NBezierTool::HandleMouseUp(System::Windows::Forms::MouseEventArgs ^ e)
+//{
+//	if (e->Button == System::Windows::Forms::MouseButtons::Left&&onMove)
+//	{
+//		if (onMove&&canMove)
+//		{
+//			points[indexToMove] = System::Drawing::Point(e->X, e->Y);
+//			
+//			System::Drawing::Graphics ^g = System::Drawing::Graphics::FromImage(bm);
+//			clear();
+//			drawCurve(g, spline);
+//
+//			System::Drawing::Graphics::FromImage(bm)->DrawImage(bm, 0, 0);
+//			onMove = false;
+//		}
+//	}
+//}
 
-		{
-			indexToMove = index;
-			onMove = true;
-		}
-	}
-	
-}
+//void NBezierTool::HandleMouseDown(System::Windows::Forms::MouseEventArgs ^ e)
+//{
+//	
+//}
+//
+//void NBezierTool::Draw(System::Windows::Forms::PaintEventArgs ^ e)
+//{
+//	if (canMove&&onMove)
+//	{
+//		System::Drawing::Bitmap ^tmp = gcnew System::Drawing::Bitmap(bm);
+//		System::Drawing::Graphics ^g = System::Drawing::Graphics::FromImage(tmp);
+//		//clear();
+//		drawSpline(g);
+//
+//		e->Graphics->DrawImage(tmp, 0, 0);
+//	}
+//	else
+//	{
+//		//clear();
+//		drawSpline(System::Drawing::Graphics::FromImage(bm));
+//		e->Graphics->DrawImage(bm, 0, 0);
+//
+//	}
+//}
+
+
+

@@ -31,6 +31,7 @@ namespace CG_3_Kolos {
 			bm = gcnew Bitmap(pictureBox->Width, pictureBox->Height);
 			pictureBox->Image = bm;
 			pictureBox->Invalidate();
+			t = gcnew BezierTool(bm);
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -66,6 +67,7 @@ namespace CG_3_Kolos {
 	protected:
 	private: System::Windows::Forms::PictureBox^  pictureBox;
 	protected:
+		Tool ^t;
 		void NBezier(System::Drawing::Graphics ^g);
 		void Bezier(System::Drawing::Graphics ^g);
 		void CubicBezier(System::Drawing::Graphics ^g, int offset);
@@ -289,7 +291,8 @@ namespace CG_3_Kolos {
 	}
 	private: System::Void pictureBox_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
 	{
-		pointCount++;
+		t->HandleMouseDown(e);
+		/*pointCount++;
 		Point p = pictureBox->PointToClient(Cursor->Position);
 		points.Add(p);
 		Graphics^ g = Graphics::FromImage(bm);
@@ -304,9 +307,9 @@ namespace CG_3_Kolos {
 
 		}
 		else {
-			//clear();
+			clear();
 			NBezier(g);
-		}
+		}*/
 
 
 		//textBoxDebug->Text = (readyToClose).ToString();

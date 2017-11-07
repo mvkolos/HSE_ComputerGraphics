@@ -1,0 +1,1356 @@
+  ExceptionStringTable.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class System.Xaml.AttachableMemberIdentifier: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Type, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IEquatable`1[System.Xaml.AttachableMemberIdentifier]
+  Properties:
+    System.String MemberName 'get ' : 
+    System.Type DeclaringType 'get ' : 
+  Methods:
+    get_MemberName(): PrivateScope, Public, HideBySig, SpecialName
+    get_DeclaringType(): PrivateScope, Public, HideBySig, SpecialName
+    op_Inequality(AttachableMemberIdentifier, AttachableMemberIdentifier): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Equality(AttachableMemberIdentifier, AttachableMemberIdentifier): PrivateScope, Public, Static, HideBySig, SpecialName
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    Equals(AttachableMemberIdentifier): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class System.Xaml.AttachablePropertyServices: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    GetAttachedPropertyCount(Object): PrivateScope, Public, Static, HideBySig
+    CopyPropertiesTo(Object, KeyValuePair`2[], Int32): PrivateScope, Public, Static, HideBySig
+    RemoveProperty(Object, AttachableMemberIdentifier): PrivateScope, Public, Static, HideBySig
+    SetProperty(Object, AttachableMemberIdentifier, Object): PrivateScope, Public, Static, HideBySig
+    TryGetProperty(Object, AttachableMemberIdentifier, Object&(Out)): PrivateScope, Public, Static, HideBySig
+    TryGetProperty(Object, AttachableMemberIdentifier, T&(Out)): PrivateScope, Public, Static, HideBySig
+Class System.Xaml.XamlObjectEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(System.Object): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Object Instance 'get set' : 
+    System.Uri SourceBamlUri 'get set' : 
+    Int32 ElementLineNumber 'get set' : 
+    Int32 ElementLinePosition 'get set' : 
+  Methods:
+    get_Instance(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceBamlUri(): PrivateScope, Public, HideBySig, SpecialName
+    get_ElementLineNumber(): PrivateScope, Public, HideBySig, SpecialName
+    get_ElementLinePosition(): PrivateScope, Public, HideBySig, SpecialName
+Interface System.Xaml.IAmbientProvider: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    GetFirstAmbientValue(IEnumerable`1, XamlMember[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetFirstAmbientValue(XamlType[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetAllAmbientValues(IEnumerable`1, XamlMember[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetAllAmbientValues(XamlType[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetAllAmbientValues(IEnumerable`1, Boolean, IEnumerable`1, XamlMember[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class System.Xaml.AmbientPropertyValue: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Xaml.XamlMember, System.Object): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Object Value 'get ' : 
+    System.Xaml.XamlMember RetrievedProperty 'get ' : 
+  Methods:
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    get_RetrievedProperty(): PrivateScope, Public, HideBySig, SpecialName
+Interface System.Xaml.IAttachedPropertyStore: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Int32 PropertyCount 'get ' : 
+  Methods:
+    get_PropertyCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    CopyPropertiesTo(KeyValuePair`2[], Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveProperty(AttachableMemberIdentifier): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetProperty(AttachableMemberIdentifier, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TryGetProperty(AttachableMemberIdentifier, Object&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Xaml.IDestinationTypeProvider: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    GetDestinationType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Xaml.INamespacePrefixLookup: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    LookupPrefix(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct System.Xaml.XamlNodeType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Byte value__ : Public, SpecialName, RTSpecialName
+    System.Xaml.XamlNodeType None = 0 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType StartObject = 1 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType GetObject = 2 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType EndObject = 3 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType StartMember = 4 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType EndMember = 5 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType Value = 6 : Public, Static, Literal, HasDefault
+    System.Xaml.XamlNodeType NamespaceDeclaration = 7 : Public, Static, Literal, HasDefault
+Class System.Xaml.XamlReaderSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean AllowProtectedMembersOnRoot 'get set' : 
+    Boolean ProvideLineInfo 'get set' : 
+    System.Uri BaseUri 'get set' : 
+    System.Reflection.Assembly LocalAssembly 'get set' : 
+    Boolean IgnoreUidsOnPropertyElements 'get set' : 
+    Boolean ValuesMustBeString 'get set' : 
+  Methods:
+    get_AllowProtectedMembersOnRoot(): PrivateScope, Public, HideBySig, SpecialName
+    set_AllowProtectedMembersOnRoot(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ProvideLineInfo(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProvideLineInfo(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_BaseUri(): PrivateScope, Public, HideBySig, SpecialName
+    set_BaseUri(Uri): PrivateScope, Public, HideBySig, SpecialName
+    get_LocalAssembly(): PrivateScope, Public, HideBySig, SpecialName
+    set_LocalAssembly(Assembly): PrivateScope, Public, HideBySig, SpecialName
+    get_IgnoreUidsOnPropertyElements(): PrivateScope, Public, HideBySig, SpecialName
+    set_IgnoreUidsOnPropertyElements(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ValuesMustBeString(): PrivateScope, Public, HideBySig, SpecialName
+    set_ValuesMustBeString(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlObjectWriter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlWriter
+    Void .ctor(System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlSchemaContext, System.Xaml.XamlObjectWriterSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Xaml.IXamlLineInfoConsumer
+  Properties:
+    System.Windows.Markup.INameScope RootNameScope 'get ' : 
+    System.Object Result 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+    Boolean ShouldProvideLineInfo 'get ' : 
+  Methods:
+    WriteGetObject(): PrivateScope, Public, Virtual, HideBySig
+    WriteStartObject(XamlType): PrivateScope, Public, Virtual, HideBySig
+    WriteEndObject(): PrivateScope, Public, Virtual, HideBySig
+    WriteStartMember(XamlMember): PrivateScope, Public, Virtual, HideBySig
+    WriteEndMember(): PrivateScope, Public, Virtual, HideBySig
+    WriteValue(Object): PrivateScope, Public, Virtual, HideBySig
+    WriteNamespace(NamespaceDeclaration): PrivateScope, Public, Virtual, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    get_RootNameScope(): PrivateScope, Public, HideBySig, SpecialName
+    get_Result(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    SetLineInfo(Int32, Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_ShouldProvideLineInfo(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class System.Xaml.XamlObjectWriterSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlWriterSettings
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlObjectWriterSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.EventHandler`1[System.Xaml.XamlObjectEventArgs] AfterBeginInitHandler 'get set' : 
+    System.EventHandler`1[System.Xaml.XamlObjectEventArgs] BeforePropertiesHandler 'get set' : 
+    System.EventHandler`1[System.Xaml.XamlObjectEventArgs] AfterPropertiesHandler 'get set' : 
+    System.EventHandler`1[System.Xaml.XamlObjectEventArgs] AfterEndInitHandler 'get set' : 
+    System.EventHandler`1[System.Windows.Markup.XamlSetValueEventArgs] XamlSetValueHandler 'get set' : 
+    System.Object RootObjectInstance 'get set' : 
+    Boolean IgnoreCanConvert 'get set' : 
+    System.Windows.Markup.INameScope ExternalNameScope 'get set' : 
+    Boolean SkipDuplicatePropertyCheck 'get set' : 
+    Boolean RegisterNamesOnExternalNamescope 'get set' : 
+    Boolean SkipProvideValueOnRoot 'get set' : 
+    Boolean PreferUnconvertedDictionaryKeys 'get set' : 
+    System.Uri SourceBamlUri 'get set' : 
+    System.Xaml.Permissions.XamlAccessLevel AccessLevel 'get set' : 
+  Methods:
+    get_AfterBeginInitHandler(): PrivateScope, Public, HideBySig, SpecialName
+    set_AfterBeginInitHandler(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_BeforePropertiesHandler(): PrivateScope, Public, HideBySig, SpecialName
+    set_BeforePropertiesHandler(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_AfterPropertiesHandler(): PrivateScope, Public, HideBySig, SpecialName
+    set_AfterPropertiesHandler(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_AfterEndInitHandler(): PrivateScope, Public, HideBySig, SpecialName
+    set_AfterEndInitHandler(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_XamlSetValueHandler(): PrivateScope, Public, HideBySig, SpecialName
+    set_XamlSetValueHandler(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_RootObjectInstance(): PrivateScope, Public, HideBySig, SpecialName
+    set_RootObjectInstance(Object): PrivateScope, Public, HideBySig, SpecialName
+    get_IgnoreCanConvert(): PrivateScope, Public, HideBySig, SpecialName
+    set_IgnoreCanConvert(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ExternalNameScope(): PrivateScope, Public, HideBySig, SpecialName
+    set_ExternalNameScope(INameScope): PrivateScope, Public, HideBySig, SpecialName
+    get_SkipDuplicatePropertyCheck(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkipDuplicatePropertyCheck(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_RegisterNamesOnExternalNamescope(): PrivateScope, Public, HideBySig, SpecialName
+    set_RegisterNamesOnExternalNamescope(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SkipProvideValueOnRoot(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkipProvideValueOnRoot(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_PreferUnconvertedDictionaryKeys(): PrivateScope, Public, HideBySig, SpecialName
+    set_PreferUnconvertedDictionaryKeys(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceBamlUri(): PrivateScope, Public, HideBySig, SpecialName
+    set_SourceBamlUri(Uri): PrivateScope, Public, HideBySig, SpecialName
+    get_AccessLevel(): PrivateScope, Public, HideBySig, SpecialName
+    set_AccessLevel(XamlAccessLevel): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlXmlReader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlReader
+    Void .ctor(System.Xml.XmlReader): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xml.XmlReader, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xml.XmlReader, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xml.XmlReader, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.Stream): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.Stream, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.Stream, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.Stream, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.TextReader): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.TextReader, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.TextReader, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.TextReader, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Xaml.IXamlLineInfo
+  Properties:
+    System.Xaml.XamlNodeType NodeType 'get ' : 
+    Boolean IsEof 'get ' : 
+    System.Xaml.NamespaceDeclaration Namespace 'get ' : 
+    System.Xaml.XamlType Type 'get ' : 
+    System.Object Value 'get ' : 
+    System.Xaml.XamlMember Member 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+    Boolean HasLineInfo 'get ' : 
+    Int32 LineNumber 'get ' : 
+    Int32 LinePosition 'get ' : 
+  Methods:
+    Read(): PrivateScope, Public, Virtual, HideBySig
+    get_NodeType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_IsEof(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Namespace(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Member(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_HasLineInfo(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LineNumber(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LinePosition(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class System.Xaml.XamlXmlReaderSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlReaderSettings
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlXmlReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String XmlLang 'get set' : 
+    Boolean XmlSpacePreserve 'get set' : 
+    Boolean SkipXmlCompatibilityProcessing 'get set' : 
+    Boolean CloseInput 'get set' : 
+  Methods:
+    get_XmlLang(): PrivateScope, Public, HideBySig, SpecialName
+    set_XmlLang(String): PrivateScope, Public, HideBySig, SpecialName
+    get_XmlSpacePreserve(): PrivateScope, Public, HideBySig, SpecialName
+    set_XmlSpacePreserve(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SkipXmlCompatibilityProcessing(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkipXmlCompatibilityProcessing(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CloseInput(): PrivateScope, Public, HideBySig, SpecialName
+    set_CloseInput(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Interface System.Xaml.IRootObjectProvider: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.Object RootObject 'get ' : 
+  Methods:
+    get_RootObject(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface System.Xaml.IXamlLineInfo: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Boolean HasLineInfo 'get ' : 
+    Int32 LineNumber 'get ' : 
+    Int32 LinePosition 'get ' : 
+  Methods:
+    get_HasLineInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_LineNumber(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_LinePosition(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface System.Xaml.IXamlLineInfoConsumer: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Boolean ShouldProvideLineInfo 'get ' : 
+  Methods:
+    SetLineInfo(Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ShouldProvideLineInfo(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface System.Xaml.IXamlNamespaceResolver: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    GetNamespace(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetNamespacePrefixes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Xaml.IXamlNameProvider: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    GetName(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Xaml.IXamlNameResolver: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Boolean IsFixupTokenAvailable 'get ' : 
+  Events:
+    System.EventHandler OnNameScopeInitializationComplete: 
+  Methods:
+    get_IsFixupTokenAvailable(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Resolve(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Resolve(String, Boolean&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetFixupToken(IEnumerable`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetFixupToken(IEnumerable`1, Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetAllNamesAndValuesInScope(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_OnNameScopeInitializationComplete(EventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_OnNameScopeInitializationComplete(EventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface System.Xaml.IXamlObjectWriterFactory: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    GetParentSettings(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetXamlObjectWriter(XamlObjectWriterSettings): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Xaml.IXamlSchemaContextProvider: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+  Methods:
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class System.Xaml.NamespaceDeclaration: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Prefix 'get ' : 
+    System.String Namespace 'get ' : 
+  Methods:
+    get_Prefix(): PrivateScope, Public, HideBySig, SpecialName
+    get_Namespace(): PrivateScope, Public, HideBySig, SpecialName
+Interface System.Xaml.IXamlIndexingReader: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Int32 Count 'get ' : 
+    Int32 CurrentIndex 'get set' : 
+  Methods:
+    get_Count(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_CurrentIndex(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_CurrentIndex(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class System.Xaml.XamlBackgroundReader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlReader
+    Void .ctor(System.Xaml.XamlReader): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Xaml.IXamlLineInfo
+  Properties:
+    System.Xaml.XamlNodeType NodeType 'get ' : 
+    Boolean IsEof 'get ' : 
+    System.Xaml.NamespaceDeclaration Namespace 'get ' : 
+    System.Xaml.XamlType Type 'get ' : 
+    System.Object Value 'get ' : 
+    System.Xaml.XamlMember Member 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+    Boolean HasLineInfo 'get ' : 
+    Int32 LineNumber 'get ' : 
+    Int32 LinePosition 'get ' : 
+  Methods:
+    StartThread(): PrivateScope, Public, HideBySig
+    StartThread(String): PrivateScope, Public, HideBySig
+    Read(): PrivateScope, Public, Virtual, HideBySig
+    get_NodeType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_IsEof(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Namespace(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Member(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_HasLineInfo(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LineNumber(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LinePosition(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class System.Xaml.XamlNodeList: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlSchemaContext, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.XamlWriter Writer 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_Writer(): PrivateScope, Public, HideBySig, SpecialName
+    GetReader(): PrivateScope, Public, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    get_Count(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlNodeQueue: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.XamlReader Reader 'get ' : 
+    System.Xaml.XamlWriter Writer 'get ' : 
+    Boolean IsEmpty 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    get_Reader(): PrivateScope, Public, HideBySig, SpecialName
+    get_Writer(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName
+    get_Count(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlDirective: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlMember
+    Void .ctor(System.Collections.Generic.IEnumerable`1[System.String], System.String, System.Xaml.XamlType, System.Xaml.Schema.XamlValueConverter`1[System.ComponentModel.TypeConverter], System.Xaml.Schema.AllowedMemberLocations): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.Schema.AllowedMemberLocations AllowedLocation 'get ' : 
+  Methods:
+    get_AllowedLocation(): PrivateScope, Public, HideBySig, SpecialName
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    GetXamlNamespaces(): PrivateScope, Public, Virtual, HideBySig
+Class System.Xaml.XamlDeferringLoader: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Methods:
+    Load(XamlReader, IServiceProvider): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Save(Object, IServiceProvider): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class System.Xaml.XamlException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Exception
+    Void .ctor(System.String, System.Exception, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Message 'get ' : 
+    Int32 LineNumber 'get set' : 
+    Int32 LinePosition 'get set' : 
+  Methods:
+    get_Message(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_LineNumber(): PrivateScope, Public, HideBySig, SpecialName
+    get_LinePosition(): PrivateScope, Public, HideBySig, SpecialName
+    GetObjectData(SerializationInfo, StreamingContext): PrivateScope, Public, Virtual, HideBySig
+Class System.Xaml.XamlParseException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.XamlObjectWriterException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.XamlDuplicateMemberException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlMember, System.Xaml.XamlType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.XamlMember DuplicateMember 'get set' : 
+    System.Xaml.XamlType ParentType 'get set' : 
+  Methods:
+    get_DuplicateMember(): PrivateScope, Public, HideBySig, SpecialName
+    set_DuplicateMember(XamlMember): PrivateScope, Public, HideBySig, SpecialName
+    get_ParentType(): PrivateScope, Public, HideBySig, SpecialName
+    set_ParentType(XamlType): PrivateScope, Public, HideBySig, SpecialName
+    GetObjectData(SerializationInfo, StreamingContext): PrivateScope, Public, Virtual, HideBySig
+Class System.Xaml.XamlInternalException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.XamlSchemaException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.XamlObjectReaderException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.XamlXmlWriterException: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.Xaml.XamlException
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.XamlLanguage: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Fields:
+    System.String Xaml2006Namespace = http://schemas.microsoft.com/winfx/2006/xaml : Public, Static, Literal, HasDefault
+    System.String Xml1998Namespace = http://www.w3.org/XML/1998/namespace : Public, Static, Literal, HasDefault
+  Properties:
+    System.Collections.Generic.IList`1[System.String] XamlNamespaces 'get ' : 
+    System.Collections.Generic.IList`1[System.String] XmlNamespaces 'get ' : 
+    System.Xaml.XamlType Array 'get ' : 
+    System.Xaml.XamlType Member 'get ' : 
+    System.Xaml.XamlType Null 'get ' : 
+    System.Xaml.XamlType Property 'get ' : 
+    System.Xaml.XamlType Reference 'get ' : 
+    System.Xaml.XamlType Static 'get ' : 
+    System.Xaml.XamlType Type 'get ' : 
+    System.Xaml.XamlType String 'get ' : 
+    System.Xaml.XamlType Double 'get ' : 
+    System.Xaml.XamlType Int32 'get ' : 
+    System.Xaml.XamlType Boolean 'get ' : 
+    System.Xaml.XamlType XData 'get ' : 
+    System.Xaml.XamlType Object 'get ' : 
+    System.Xaml.XamlType Char 'get ' : 
+    System.Xaml.XamlType Single 'get ' : 
+    System.Xaml.XamlType Byte 'get ' : 
+    System.Xaml.XamlType Int16 'get ' : 
+    System.Xaml.XamlType Int64 'get ' : 
+    System.Xaml.XamlType Decimal 'get ' : 
+    System.Xaml.XamlType Uri 'get ' : 
+    System.Xaml.XamlType TimeSpan 'get ' : 
+    System.Collections.ObjectModel.ReadOnlyCollection`1[System.Xaml.XamlType] AllTypes 'get ' : 
+    System.Xaml.XamlDirective Arguments 'get ' : 
+    System.Xaml.XamlDirective AsyncRecords 'get ' : 
+    System.Xaml.XamlDirective Class 'get ' : 
+    System.Xaml.XamlDirective ClassModifier 'get ' : 
+    System.Xaml.XamlDirective Code 'get ' : 
+    System.Xaml.XamlDirective ConnectionId 'get ' : 
+    System.Xaml.XamlDirective FactoryMethod 'get ' : 
+    System.Xaml.XamlDirective FieldModifier 'get ' : 
+    System.Xaml.XamlDirective Items 'get ' : 
+    System.Xaml.XamlDirective Initialization 'get ' : 
+    System.Xaml.XamlDirective Key 'get ' : 
+    System.Xaml.XamlDirective Members 'get ' : 
+    System.Xaml.XamlDirective ClassAttributes 'get ' : 
+    System.Xaml.XamlDirective Name 'get ' : 
+    System.Xaml.XamlDirective PositionalParameters 'get ' : 
+    System.Xaml.XamlDirective Shared 'get ' : 
+    System.Xaml.XamlDirective Subclass 'get ' : 
+    System.Xaml.XamlDirective SynchronousMode 'get ' : 
+    System.Xaml.XamlDirective TypeArguments 'get ' : 
+    System.Xaml.XamlDirective Uid 'get ' : 
+    System.Xaml.XamlDirective UnknownContent 'get ' : 
+    System.Xaml.XamlDirective Base 'get ' : 
+    System.Xaml.XamlDirective Lang 'get ' : 
+    System.Xaml.XamlDirective Space 'get ' : 
+    System.Collections.ObjectModel.ReadOnlyCollection`1[System.Xaml.XamlDirective] AllDirectives 'get ' : 
+  Methods:
+    get_XamlNamespaces(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_XmlNamespaces(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Array(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Member(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Null(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Property(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Reference(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Static(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_String(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Double(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Int32(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Boolean(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_XData(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Object(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Char(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Single(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Byte(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Int16(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Int64(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Decimal(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Uri(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_TimeSpan(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_AllTypes(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Arguments(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_AsyncRecords(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Class(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ClassModifier(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Code(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ConnectionId(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_FactoryMethod(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_FieldModifier(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Items(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Initialization(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Key(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Members(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ClassAttributes(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_PositionalParameters(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Shared(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Subclass(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_SynchronousMode(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_TypeArguments(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Uid(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_UnknownContent(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Base(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Lang(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Space(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_AllDirectives(): PrivateScope, Public, Static, HideBySig, SpecialName
+Class System.Xaml.XamlMember: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.Xaml.XamlType, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Reflection.PropertyInfo, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Reflection.PropertyInfo, System.Xaml.XamlSchemaContext, System.Xaml.Schema.XamlMemberInvoker): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Reflection.EventInfo, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Reflection.EventInfo, System.Xaml.XamlSchemaContext, System.Xaml.Schema.XamlMemberInvoker): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Reflection.MethodInfo, System.Reflection.MethodInfo, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Reflection.MethodInfo, System.Reflection.MethodInfo, System.Xaml.XamlSchemaContext, System.Xaml.Schema.XamlMemberInvoker): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Reflection.MethodInfo, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Reflection.MethodInfo, System.Xaml.XamlSchemaContext, System.Xaml.Schema.XamlMemberInvoker): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IEquatable`1[System.Xaml.XamlMember]
+  Properties:
+    System.Xaml.XamlType DeclaringType 'get ' : 
+    System.Xaml.Schema.XamlMemberInvoker Invoker 'get ' : 
+    Boolean IsUnknown 'get ' : 
+    Boolean IsReadPublic 'get ' : 
+    Boolean IsWritePublic 'get ' : 
+    System.String Name 'get ' : 
+    Boolean IsNameValid 'get ' : 
+    System.String PreferredXamlNamespace 'get ' : 
+    System.Xaml.XamlType TargetType 'get ' : 
+    System.Xaml.XamlType Type 'get ' : 
+    System.Xaml.Schema.XamlValueConverter`1[System.ComponentModel.TypeConverter] TypeConverter 'get ' : 
+    System.Xaml.Schema.XamlValueConverter`1[System.Windows.Markup.ValueSerializer] ValueSerializer 'get ' : 
+    System.Xaml.Schema.XamlValueConverter`1[System.Xaml.XamlDeferringLoader] DeferringLoader 'get ' : 
+    System.Reflection.MemberInfo UnderlyingMember 'get ' : 
+    Boolean IsReadOnly 'get ' : 
+    Boolean IsWriteOnly 'get ' : 
+    Boolean IsAttachable 'get ' : 
+    Boolean IsEvent 'get ' : 
+    Boolean IsDirective 'get ' : 
+    System.Collections.Generic.IList`1[System.Xaml.XamlMember] DependsOn 'get ' : 
+    Boolean IsAmbient 'get ' : 
+    System.ComponentModel.DesignerSerializationVisibility SerializationVisibility 'get ' : 
+  Methods:
+    get_DeclaringType(): PrivateScope, Public, HideBySig, SpecialName
+    get_Invoker(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsUnknown(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsReadPublic(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsWritePublic(): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsNameValid(): PrivateScope, Public, HideBySig, SpecialName
+    get_PreferredXamlNamespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_TargetType(): PrivateScope, Public, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    get_TypeConverter(): PrivateScope, Public, HideBySig, SpecialName
+    get_ValueSerializer(): PrivateScope, Public, HideBySig, SpecialName
+    get_DeferringLoader(): PrivateScope, Public, HideBySig, SpecialName
+    get_UnderlyingMember(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsReadOnly(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsWriteOnly(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsAttachable(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsEvent(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsDirective(): PrivateScope, Public, HideBySig, SpecialName
+    GetXamlNamespaces(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    get_DependsOn(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsAmbient(): PrivateScope, Public, HideBySig, SpecialName
+    get_SerializationVisibility(): PrivateScope, Public, HideBySig, SpecialName
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    Equals(XamlMember): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    op_Equality(XamlMember, XamlMember): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(XamlMember, XamlMember): PrivateScope, Public, Static, HideBySig, SpecialName
+Class System.Xaml.XamlReader: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Xaml.XamlNodeType NodeType 'get ' : 
+    Boolean IsEof 'get ' : 
+    System.Xaml.NamespaceDeclaration Namespace 'get ' : 
+    System.Xaml.XamlType Type 'get ' : 
+    System.Object Value 'get ' : 
+    System.Xaml.XamlMember Member 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+  Methods:
+    Read(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_NodeType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_IsEof(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Namespace(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Value(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Member(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Skip(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Close(): PrivateScope, Public, HideBySig
+    ReadSubtree(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class System.Xaml.XamlSchemaContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlSchemaContextSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Collections.Generic.IEnumerable`1[System.Reflection.Assembly]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Collections.Generic.IEnumerable`1[System.Reflection.Assembly], System.Xaml.XamlSchemaContextSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean SupportMarkupExtensionsWithDuplicateArity 'get ' : 
+    Boolean FullyQualifyAssemblyNamesInClrNamespaces 'get ' : 
+    System.Collections.Generic.IList`1[System.Reflection.Assembly] ReferenceAssemblies 'get ' : 
+  Methods:
+    GetAllXamlTypes(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetAllXamlNamespaces(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetPreferredPrefix(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetXamlDirective(String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetXamlType(XamlTypeName): PrivateScope, Public, HideBySig
+    TryGetCompatibleXamlNamespace(String, String&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetXamlType(Type): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_SupportMarkupExtensionsWithDuplicateArity(): PrivateScope, Public, HideBySig, SpecialName
+    get_FullyQualifyAssemblyNamesInClrNamespaces(): PrivateScope, Public, HideBySig, SpecialName
+    get_ReferenceAssemblies(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlSchemaContextSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlSchemaContextSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean SupportMarkupExtensionsWithDuplicateArity 'get set' : 
+    Boolean FullyQualifyAssemblyNamesInClrNamespaces 'get set' : 
+  Methods:
+    get_SupportMarkupExtensionsWithDuplicateArity(): PrivateScope, Public, HideBySig, SpecialName
+    set_SupportMarkupExtensionsWithDuplicateArity(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FullyQualifyAssemblyNamesInClrNamespaces(): PrivateScope, Public, HideBySig, SpecialName
+    set_FullyQualifyAssemblyNamesInClrNamespaces(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlServices: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Parse(String): PrivateScope, Public, Static, HideBySig
+    Load(String): PrivateScope, Public, Static, HideBySig
+    Load(Stream): PrivateScope, Public, Static, HideBySig
+    Load(TextReader): PrivateScope, Public, Static, HideBySig
+    Load(XmlReader): PrivateScope, Public, Static, HideBySig
+    Load(XamlReader): PrivateScope, Public, Static, HideBySig
+    Transform(XamlReader, XamlWriter): PrivateScope, Public, Static, HideBySig
+    Transform(XamlReader, XamlWriter, Boolean): PrivateScope, Public, Static, HideBySig
+    Save(Object): PrivateScope, Public, Static, HideBySig
+    Save(String, Object): PrivateScope, Public, Static, HideBySig
+    Save(Stream, Object): PrivateScope, Public, Static, HideBySig
+    Save(TextWriter, Object): PrivateScope, Public, Static, HideBySig
+    Save(XmlWriter, Object): PrivateScope, Public, Static, HideBySig
+    Save(XamlWriter, Object): PrivateScope, Public, Static, HideBySig
+Class System.Xaml.XamlType: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.Collections.Generic.IList`1[System.Xaml.XamlType], System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Type, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Type, System.Xaml.XamlSchemaContext, System.Xaml.Schema.XamlTypeInvoker): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IEquatable`1[System.Xaml.XamlType]
+  Properties:
+    System.Xaml.XamlType BaseType 'get ' : 
+    System.Xaml.Schema.XamlTypeInvoker Invoker 'get ' : 
+    Boolean IsNameValid 'get ' : 
+    Boolean IsUnknown 'get ' : 
+    System.String Name 'get ' : 
+    System.String PreferredXamlNamespace 'get ' : 
+    System.Collections.Generic.IList`1[System.Xaml.XamlType] TypeArguments 'get ' : 
+    System.Type UnderlyingType 'get ' : 
+    Boolean ConstructionRequiresArguments 'get ' : 
+    Boolean IsArray 'get ' : 
+    Boolean IsCollection 'get ' : 
+    Boolean IsConstructible 'get ' : 
+    Boolean IsDictionary 'get ' : 
+    Boolean IsGeneric 'get ' : 
+    Boolean IsMarkupExtension 'get ' : 
+    Boolean IsNameScope 'get ' : 
+    Boolean IsNullable 'get ' : 
+    Boolean IsPublic 'get ' : 
+    Boolean IsUsableDuringInitialization 'get ' : 
+    Boolean IsWhitespaceSignificantCollection 'get ' : 
+    Boolean IsXData 'get ' : 
+    Boolean TrimSurroundingWhitespace 'get ' : 
+    Boolean IsAmbient 'get ' : 
+    System.Xaml.XamlType KeyType 'get ' : 
+    System.Xaml.XamlType ItemType 'get ' : 
+    System.Collections.Generic.IList`1[System.Xaml.XamlType] AllowedContentTypes 'get ' : 
+    System.Collections.Generic.IList`1[System.Xaml.XamlType] ContentWrappers 'get ' : 
+    System.Xaml.Schema.XamlValueConverter`1[System.ComponentModel.TypeConverter] TypeConverter 'get ' : 
+    System.Xaml.Schema.XamlValueConverter`1[System.Windows.Markup.ValueSerializer] ValueSerializer 'get ' : 
+    System.Xaml.XamlMember ContentProperty 'get ' : 
+    System.Xaml.Schema.XamlValueConverter`1[System.Xaml.XamlDeferringLoader] DeferringLoader 'get ' : 
+    System.Xaml.XamlType MarkupExtensionReturnType 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+  Methods:
+    get_BaseType(): PrivateScope, Public, HideBySig, SpecialName
+    get_Invoker(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsNameValid(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsUnknown(): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_PreferredXamlNamespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_TypeArguments(): PrivateScope, Public, HideBySig, SpecialName
+    get_UnderlyingType(): PrivateScope, Public, HideBySig, SpecialName
+    get_ConstructionRequiresArguments(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsArray(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsCollection(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsConstructible(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsDictionary(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsGeneric(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsMarkupExtension(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsNameScope(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsNullable(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsPublic(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsUsableDuringInitialization(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsWhitespaceSignificantCollection(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsXData(): PrivateScope, Public, HideBySig, SpecialName
+    get_TrimSurroundingWhitespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsAmbient(): PrivateScope, Public, HideBySig, SpecialName
+    get_KeyType(): PrivateScope, Public, HideBySig, SpecialName
+    get_ItemType(): PrivateScope, Public, HideBySig, SpecialName
+    get_AllowedContentTypes(): PrivateScope, Public, HideBySig, SpecialName
+    get_ContentWrappers(): PrivateScope, Public, HideBySig, SpecialName
+    get_TypeConverter(): PrivateScope, Public, HideBySig, SpecialName
+    get_ValueSerializer(): PrivateScope, Public, HideBySig, SpecialName
+    get_ContentProperty(): PrivateScope, Public, HideBySig, SpecialName
+    get_DeferringLoader(): PrivateScope, Public, HideBySig, SpecialName
+    get_MarkupExtensionReturnType(): PrivateScope, Public, HideBySig, SpecialName
+    get_SchemaContext(): PrivateScope, Public, HideBySig, SpecialName
+    GetMember(String): PrivateScope, Public, HideBySig
+    GetAllMembers(): PrivateScope, Public, HideBySig
+    GetAliasedProperty(XamlDirective): PrivateScope, Public, HideBySig
+    GetAttachableMember(String): PrivateScope, Public, HideBySig
+    GetAllAttachableMembers(): PrivateScope, Public, HideBySig
+    CanAssignTo(XamlType): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetPositionalParameters(Int32): PrivateScope, Public, HideBySig
+    GetXamlNamespaces(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    Equals(XamlType): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    op_Equality(XamlType, XamlType): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(XamlType, XamlType): PrivateScope, Public, Static, HideBySig, SpecialName
+Class System.Xaml.XamlObjectReader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlReader
+    Void .ctor(System.Object): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Object, System.Xaml.XamlObjectReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Object, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Object, System.Xaml.XamlSchemaContext, System.Xaml.XamlObjectReaderSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.XamlNodeType NodeType 'get ' : 
+    System.Xaml.NamespaceDeclaration Namespace 'get ' : 
+    System.Xaml.XamlType Type 'get ' : 
+    System.Xaml.XamlMember Member 'get ' : 
+    System.Object Value 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+    Boolean IsEof 'get ' : 
+    System.Object Instance 'get ' : 
+  Methods:
+    Read(): PrivateScope, Public, Virtual, HideBySig
+    get_NodeType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Namespace(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Member(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_IsEof(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Instance(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class System.Xaml.XamlObjectReaderSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlReaderSettings
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean RequireExplicitContentVisibility 'get set' : 
+  Methods:
+    get_RequireExplicitContentVisibility(): PrivateScope, Public, HideBySig, SpecialName
+    set_RequireExplicitContentVisibility(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.XamlWriter: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+  Methods:
+    WriteGetObject(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WriteStartObject(XamlType): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WriteEndObject(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WriteStartMember(XamlMember): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WriteEndMember(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WriteValue(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    WriteNamespace(NamespaceDeclaration): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    WriteNode(XamlReader): PrivateScope, Public, HideBySig
+    Close(): PrivateScope, Public, HideBySig
+Class System.Xaml.XamlXmlWriter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlWriter
+    Void .ctor(System.IO.Stream, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.Stream, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlWriterSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.TextWriter, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.IO.TextWriter, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlWriterSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xml.XmlWriter, System.Xaml.XamlSchemaContext): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xml.XmlWriter, System.Xaml.XamlSchemaContext, System.Xaml.XamlXmlWriterSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.XamlXmlWriterSettings Settings 'get ' : 
+    System.Xaml.XamlSchemaContext SchemaContext 'get ' : 
+  Methods:
+    Flush(): PrivateScope, Public, HideBySig
+    WriteGetObject(): PrivateScope, Public, Virtual, HideBySig
+    WriteStartObject(XamlType): PrivateScope, Public, Virtual, HideBySig
+    WriteEndObject(): PrivateScope, Public, Virtual, HideBySig
+    WriteStartMember(XamlMember): PrivateScope, Public, Virtual, HideBySig
+    WriteEndMember(): PrivateScope, Public, Virtual, HideBySig
+    WriteValue(Object): PrivateScope, Public, Virtual, HideBySig
+    WriteNamespace(NamespaceDeclaration): PrivateScope, Public, Virtual, HideBySig
+    get_Settings(): PrivateScope, Public, HideBySig, SpecialName
+    get_SchemaContext(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class System.Xaml.XamlXmlWriterSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Xaml.XamlWriterSettings
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean AssumeValidInput 'get set' : 
+    Boolean CloseOutput 'get set' : 
+  Methods:
+    get_AssumeValidInput(): PrivateScope, Public, HideBySig, SpecialName
+    set_AssumeValidInput(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CloseOutput(): PrivateScope, Public, HideBySig, SpecialName
+    set_CloseOutput(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    Copy(): PrivateScope, Public, HideBySig
+Class System.Xaml.XamlWriterSettings: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlWriterSettings): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Xaml.Permissions.XamlAccessLevel: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  Properties:
+    System.Reflection.AssemblyName AssemblyAccessToAssemblyName 'get ' : 
+    System.String PrivateAccessToTypeName 'get set' : 
+  Methods:
+    AssemblyAccessTo(Assembly): PrivateScope, Public, Static, HideBySig
+    AssemblyAccessTo(AssemblyName): PrivateScope, Public, Static, HideBySig
+    PrivateAccessTo(Type): PrivateScope, Public, Static, HideBySig
+    PrivateAccessTo(String): PrivateScope, Public, Static, HideBySig
+    get_AssemblyAccessToAssemblyName(): PrivateScope, Public, HideBySig, SpecialName
+    get_PrivateAccessToTypeName(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Xaml.Permissions.XamlLoadPermission: AutoLayout, AnsiClass, Class, Public, Sealed, Serializable, BeforeFieldInit
+  :System.Security.CodeAccessPermission
+    Void .ctor(System.Security.Permissions.PermissionState): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.Permissions.XamlAccessLevel): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Collections.Generic.IEnumerable`1[System.Xaml.Permissions.XamlAccessLevel]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Security.Permissions.IUnrestrictedPermission
+  Properties:
+    System.Collections.Generic.IList`1[System.Xaml.Permissions.XamlAccessLevel] AllowedAccess 'get set' : 
+  Methods:
+    get_AllowedAccess(): PrivateScope, Public, HideBySig, SpecialName
+    Copy(): PrivateScope, Public, Virtual, HideBySig
+    FromXml(SecurityElement): PrivateScope, Public, Virtual, HideBySig
+    Includes(XamlAccessLevel): PrivateScope, Public, HideBySig
+    Intersect(IPermission): PrivateScope, Public, Virtual, HideBySig
+    IsSubsetOf(IPermission): PrivateScope, Public, Virtual, HideBySig
+    ToXml(): PrivateScope, Public, Virtual, HideBySig
+    Union(IPermission): PrivateScope, Public, Virtual, HideBySig
+    IsUnrestricted(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Struct System.Xaml.Schema.AllowedMemberLocations: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    System.Xaml.Schema.AllowedMemberLocations None = 0 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.AllowedMemberLocations Attribute = 1 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.AllowedMemberLocations MemberElement = 2 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.AllowedMemberLocations Any = 3 : Public, Static, Literal, HasDefault
+Struct System.Xaml.Schema.XamlCollectionKind: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Byte value__ : Public, SpecialName, RTSpecialName
+    System.Xaml.Schema.XamlCollectionKind None = 0 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.XamlCollectionKind Collection = 1 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.XamlCollectionKind Dictionary = 2 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.XamlCollectionKind Array = 3 : Public, Static, Literal, HasDefault
+Class System.Xaml.Schema.XamlMemberInvoker: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Xaml.XamlMember): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.Schema.XamlMemberInvoker UnknownInvoker 'get ' : 
+    System.Reflection.MethodInfo UnderlyingGetter 'get ' : 
+    System.Reflection.MethodInfo UnderlyingSetter 'get ' : 
+  Methods:
+    get_UnknownInvoker(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_UnderlyingGetter(): PrivateScope, Public, HideBySig, SpecialName
+    get_UnderlyingSetter(): PrivateScope, Public, HideBySig, SpecialName
+    GetValue(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SetValue(Object, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ShouldSerializeValue(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Struct System.Xaml.Schema.ShouldSerializeResult: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    System.Xaml.Schema.ShouldSerializeResult Default = 0 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.ShouldSerializeResult True = 1 : Public, Static, Literal, HasDefault
+    System.Xaml.Schema.ShouldSerializeResult False = 2 : Public, Static, Literal, HasDefault
+Class System.Xaml.Schema.XamlTypeInvoker: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Xaml.XamlType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.Schema.XamlTypeInvoker UnknownInvoker 'get ' : 
+    System.EventHandler`1[System.Windows.Markup.XamlSetMarkupExtensionEventArgs] SetMarkupExtensionHandler 'get ' : 
+    System.EventHandler`1[System.Windows.Markup.XamlSetTypeConverterEventArgs] SetTypeConverterHandler 'get ' : 
+  Methods:
+    get_UnknownInvoker(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_SetMarkupExtensionHandler(): PrivateScope, Public, HideBySig, SpecialName
+    get_SetTypeConverterHandler(): PrivateScope, Public, HideBySig, SpecialName
+    AddToCollection(Object, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    AddToDictionary(Object, Object, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    CreateInstance(Object[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetAddMethod(XamlType): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetEnumeratorMethod(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetItems(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class System.Xaml.Schema.XamlValueConverter`1[TConverterBase]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: TConverterBase,  ReferenceType
+    Void .ctor(System.Type, System.Xaml.XamlType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Type, System.Xaml.XamlType, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IEquatable`1[System.Xaml.Schema.XamlValueConverter`1[TConverterBase]]
+  Properties:
+    System.String Name 'get set' : 
+    System.Type ConverterType 'get set' : 
+    System.Xaml.XamlType TargetType 'get set' : 
+    TConverterBase ConverterInstance 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_ConverterType(): PrivateScope, Public, HideBySig, SpecialName
+    get_TargetType(): PrivateScope, Public, HideBySig, SpecialName
+    get_ConverterInstance(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    Equals(XamlValueConverter`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    op_Equality(XamlValueConverter`1, XamlValueConverter`1): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(XamlValueConverter`1, XamlValueConverter`1): PrivateScope, Public, Static, HideBySig, SpecialName
+Class System.Xaml.Schema.XamlTypeName: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String, System.Collections.Generic.IEnumerable`1[System.Xaml.Schema.XamlTypeName]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Xaml.XamlType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get set' : 
+    System.String Namespace 'get set' : 
+    System.Collections.Generic.IList`1[System.Xaml.Schema.XamlTypeName] TypeArguments 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Namespace(): PrivateScope, Public, HideBySig, SpecialName
+    set_Namespace(String): PrivateScope, Public, HideBySig, SpecialName
+    get_TypeArguments(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    ToString(INamespacePrefixLookup): PrivateScope, Public, HideBySig
+    ToString(IList`1, INamespacePrefixLookup): PrivateScope, Public, Static, HideBySig
+    Parse(String, IXamlNamespaceResolver): PrivateScope, Public, Static, HideBySig
+    ParseList(String, IXamlNamespaceResolver): PrivateScope, Public, Static, HideBySig
+    TryParse(String, IXamlNamespaceResolver, XamlTypeName&(Out)): PrivateScope, Public, Static, HideBySig
+    TryParseList(String, IXamlNamespaceResolver, IList`1&(Out)): PrivateScope, Public, Static, HideBySig
+Class System.Xaml.Schema.XamlTypeTypeConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.TypeConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+    CanConvertTo(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.MemberDefinition: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    System.String Name 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Name(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class System.Windows.Markup.PropertyDefinition: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.MemberDefinition
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get set' : 
+    System.Xaml.XamlType Type 'get set' : 
+    System.String Modifier 'get set' : 
+    System.Collections.Generic.IList`1[System.Attribute] Attributes 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    set_Type(XamlType): PrivateScope, Public, HideBySig, SpecialName
+    get_Modifier(): PrivateScope, Public, HideBySig, SpecialName
+    set_Modifier(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Attributes(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit (Obsolete)
+  :System.Attribute
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Type Type 'get set' : 
+  Methods:
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    set_Type(Type): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.AmbientAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Windows.Markup.UsableDuringInitializationAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Usable 'get ' : 
+  Methods:
+    get_Usable(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.ConstructorArgumentAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String ArgumentName 'get ' : 
+  Methods:
+    get_ArgumentName(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.ContentPropertyAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.ContentWrapperAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Type ContentWrapper 'get ' : 
+    System.Object TypeId 'get ' : 
+  Methods:
+    get_ContentWrapper(): PrivateScope, Public, HideBySig, SpecialName
+    get_TypeId(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.DependsOnAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Object TypeId 'get ' : 
+    System.String Name 'get ' : 
+  Methods:
+    get_TypeId(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.MarkupExtensionReturnTypeAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Type, System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName (Obsolete)
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Type ReturnType 'get ' : 
+    System.Type ExpressionType 'get ' :  (Obsolete)
+  Methods:
+    get_ReturnType(): PrivateScope, Public, HideBySig, SpecialName
+    get_ExpressionType(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.NameScopePropertyAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get ' : 
+    System.Type Type 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.RootNamespaceAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Namespace 'get ' : 
+  Methods:
+    get_Namespace(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.TrimSurroundingWhitespaceAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Windows.Markup.UidPropertyAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.WhitespaceSignificantCollectionAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class System.Windows.Markup.XamlSetMarkupExtensionAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String XamlSetMarkupExtensionHandler 'get set' : 
+  Methods:
+    get_XamlSetMarkupExtensionHandler(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.XmlLangPropertyAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.XmlnsCompatibleWithAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String OldNamespace 'get ' : 
+    System.String NewNamespace 'get ' : 
+  Methods:
+    get_OldNamespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_NewNamespace(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.XmlnsDefinitionAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String XmlNamespace 'get ' : 
+    System.String ClrNamespace 'get ' : 
+    System.String AssemblyName 'get set' : 
+  Methods:
+    get_XmlNamespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClrNamespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_AssemblyName(): PrivateScope, Public, HideBySig, SpecialName
+    set_AssemblyName(String): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.XmlnsPrefixAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String XmlNamespace 'get ' : 
+    System.String Prefix 'get ' : 
+  Methods:
+    get_XmlNamespace(): PrivateScope, Public, HideBySig, SpecialName
+    get_Prefix(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.DateTimeValueSerializer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.ValueSerializer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFromString(String, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig
+    CanConvertToString(Object, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig
+    ConvertFromString(String, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig
+    ConvertToString(Object, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig
+Interface System.Windows.Markup.INameScope: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    RegisterName(String, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    UnregisterName(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    FindName(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Windows.Markup.INameScopeDictionary: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Interfaces:
+    System.Windows.Markup.INameScope
+    System.Collections.Generic.IDictionary`2[System.String,System.Object]
+    System.Collections.Generic.ICollection`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]]
+    System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.String,System.Object]]
+    System.Collections.IEnumerable
+Interface System.Windows.Markup.IProvideValueTarget: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.Object TargetObject 'get ' : 
+    System.Object TargetProperty 'get ' : 
+  Methods:
+    get_TargetObject(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TargetProperty(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface System.Windows.Markup.IQueryAmbient: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    IsAmbientPropertyAvailable(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Windows.Markup.IUriContext: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.Uri BaseUri 'get set' : 
+  Methods:
+    get_BaseUri(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_BaseUri(Uri): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface System.Windows.Markup.IValueSerializerContext: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Interfaces:
+    System.ComponentModel.ITypeDescriptorContext
+    System.IServiceProvider
+  Methods:
+    GetValueSerializerFor(Type): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetValueSerializerFor(PropertyDescriptor): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface System.Windows.Markup.IXamlTypeResolver: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    Resolve(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class System.Windows.Markup.ValueSerializer: AutoLayout, AnsiClass, Class, Public, Abstract
+  Methods:
+    CanConvertToString(Object, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    CanConvertFromString(String, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ConvertToString(Object, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ConvertFromString(String, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    TypeReferences(Object, IValueSerializerContext): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetSerializerFor(Type): PrivateScope, Public, Static, HideBySig
+    GetSerializerFor(PropertyDescriptor): PrivateScope, Public, Static, HideBySig
+    GetSerializerFor(Type, IValueSerializerContext): PrivateScope, Public, Static, HideBySig
+    GetSerializerFor(PropertyDescriptor, IValueSerializerContext): PrivateScope, Public, Static, HideBySig
+Class System.Windows.Markup.XamlSetMarkupExtensionEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.XamlSetValueEventArgs
+    Void .ctor(System.Xaml.XamlMember, System.Windows.Markup.MarkupExtension, System.IServiceProvider): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Windows.Markup.MarkupExtension MarkupExtension 'get ' : 
+    System.IServiceProvider ServiceProvider 'get set' : 
+  Methods:
+    get_MarkupExtension(): PrivateScope, Public, HideBySig, SpecialName
+    get_ServiceProvider(): PrivateScope, Public, HideBySig, SpecialName
+    CallBase(): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.XamlSetTypeConverterAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String XamlSetTypeConverterHandler 'get set' : 
+  Methods:
+    get_XamlSetTypeConverterHandler(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.XamlSetTypeConverterEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.XamlSetValueEventArgs
+    Void .ctor(System.Xaml.XamlMember, System.ComponentModel.TypeConverter, System.Object, System.ComponentModel.ITypeDescriptorContext, System.Globalization.CultureInfo): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.ComponentModel.TypeConverter TypeConverter 'get set' : 
+    System.ComponentModel.ITypeDescriptorContext ServiceProvider 'get set' : 
+    System.Globalization.CultureInfo CultureInfo 'get set' : 
+  Methods:
+    get_TypeConverter(): PrivateScope, Public, HideBySig, SpecialName
+    get_ServiceProvider(): PrivateScope, Public, HideBySig, SpecialName
+    get_CultureInfo(): PrivateScope, Public, HideBySig, SpecialName
+    CallBase(): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.XamlSetValueEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(System.Xaml.XamlMember, System.Object): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Xaml.XamlMember Member 'get set' : 
+    System.Object Value 'get set' : 
+    Boolean Handled 'get set' : 
+  Methods:
+    get_Member(): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    get_Handled(): PrivateScope, Public, HideBySig, SpecialName
+    set_Handled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    CallBase(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class System.Windows.Markup.MarkupExtension: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Methods:
+    ProvideValue(IServiceProvider): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class System.Windows.Markup.ArrayExtension: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.MarkupExtension
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Array): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Type Type 'get set' : 
+    System.Collections.IList Items 'get ' : 
+  Methods:
+    AddChild(Object): PrivateScope, Public, HideBySig
+    AddText(String): PrivateScope, Public, HideBySig
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    set_Type(Type): PrivateScope, Public, HideBySig, SpecialName
+    get_Items(): PrivateScope, Public, HideBySig, SpecialName
+    ProvideValue(IServiceProvider): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.DictionaryKeyPropertyAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+Interface System.Windows.Markup.IComponentConnector: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    Connect(Int32, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    InitializeComponent(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class System.Windows.Markup.NullExtension: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.MarkupExtension
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ProvideValue(IServiceProvider): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.StaticExtension: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.MarkupExtension
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Member 'get set' : 
+    System.Type MemberType 'get set' : 
+  Methods:
+    ProvideValue(IServiceProvider): PrivateScope, Public, Virtual, HideBySig
+    get_Member(): PrivateScope, Public, HideBySig, SpecialName
+    set_Member(String): PrivateScope, Public, HideBySig, SpecialName
+    get_MemberType(): PrivateScope, Public, HideBySig, SpecialName
+    set_MemberType(Type): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.TypeExtension: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.MarkupExtension
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String TypeName 'get set' : 
+    System.Type Type 'get set' : 
+  Methods:
+    ProvideValue(IServiceProvider): PrivateScope, Public, Virtual, HideBySig
+    get_TypeName(): PrivateScope, Public, HideBySig, SpecialName
+    set_TypeName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    set_Type(Type): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.RuntimeNamePropertyAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.NameReferenceConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.TypeConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+    CanConvertTo(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.Reference: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Markup.MarkupExtension
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    ProvideValue(IServiceProvider): PrivateScope, Public, Virtual, HideBySig
+Class System.Windows.Markup.XamlDeferLoadAttribute: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.Type, System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String LoaderTypeName 'get ' : 
+    System.String ContentTypeName 'get ' : 
+    System.Type LoaderType 'get set' : 
+    System.Type ContentType 'get set' : 
+  Methods:
+    get_LoaderTypeName(): PrivateScope, Public, HideBySig, SpecialName
+    get_ContentTypeName(): PrivateScope, Public, HideBySig, SpecialName
+    get_LoaderType(): PrivateScope, Public, HideBySig, SpecialName
+    get_ContentType(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Windows.Markup.XData: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Text 'get set' : 
+    System.Object XmlReader 'get set' : 
+  Methods:
+    get_Text(): PrivateScope, Public, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, HideBySig, SpecialName
+    get_XmlReader(): PrivateScope, Public, HideBySig, SpecialName
+    set_XmlReader(Object): PrivateScope, Public, HideBySig, SpecialName

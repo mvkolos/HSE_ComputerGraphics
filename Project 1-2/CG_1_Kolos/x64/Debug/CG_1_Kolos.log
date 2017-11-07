@@ -1,0 +1,7 @@
+﻿Utility.obj : error LNK2020: эхЁрчЁх°хээр  ыхъёхьр (06000001) Painter::drawLine
+BresForm.obj : error LNK2020: эхЁрчЁх°хээр  ыхъёхьр (06000001) Painter::drawLine
+Utility.obj : error LNK2020: эхЁрчЁх°хээр  ыхъёхьр (06000002) Painter::drawEllipse
+BresForm.obj : error LNK2020: эхЁрчЁх°хээр  ыхъёхьр (06000002) Painter::drawEllipse
+Utility.obj : error LNK2020: эхЁрчЁх°хээр  ыхъёхьр (06000003) Painter::drawFourPoints
+BresForm.obj : error LNK2020: эхЁрчЁх°хээр  ыхъёхьр (06000003) Painter::drawFourPoints
+D:\Users\mvkol\Documents\CG\HSE_ComputerGraphics\Project 1-2\x64\Debug\CG_1_Kolos.exe : fatal error LNK1120: эхЁрчЁх°хээ√ї тэх°эшї ¤ыхьхэЄют: 6

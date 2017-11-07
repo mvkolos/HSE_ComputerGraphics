@@ -1,0 +1,72 @@
+  CG_1_Kolos.BresForm.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly CG_1_Kolos, Version=0.0.*, Culture=Инвариантный язык (Инвариантная страна): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly UIAutomationProvider, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly WindowsFormsIntegration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Class CG_1_Kolos.BresForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 pointCount : Public
+    System.Drawing.Point currentPoint : Public
+    System.Drawing.Point lastPoint : Public
+    Boolean bresenham : Public
+    Int32 tool : Public
+    Int32 thickness : Public
+    Boolean fill : Public
+    Int32 height : Public
+    Int32 width : Public
+    System.Drawing.Rectangle mRect : Public
+    Boolean draw : Public
+    System.Collections.Generic.Stack`1[System.Drawing.Point] pixels IsByValue : Public, InitOnly
+    Int32 recCount : Public
+    System.Drawing.Color border : Public
+    System.Drawing.Point line_start : Public
+    System.Drawing.Point polystart : Public
+    Boolean readyToClose : Public
+    System.Collections.Generic.List`1[System.Tuple`2[System.Drawing.Point,System.Drawing.Point]] lines IsByValue : Public, InitOnly
+    System.Collections.Generic.List`1[System.Drawing.Point] contour : Public
+  Methods:
+    drawLine(Graphics, Point, Point, Boolean(HasFieldMarshal), Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    drawEllipse(Graphics, Point, Int32, Int32): PrivateScope, Public, HideBySig
+    drawFourPoints(Pen, Point, Int32, Int32): PrivateScope, Public, HideBySig
+    drawBuiltIn(): PrivateScope, Public, HideBySig
+    refresh(): PrivateScope, Public, HideBySig
+    redraw(): PrivateScope, Public, HideBySig
+    SeedFill(Graphics, Point, Color): PrivateScope, Public, HideBySig
+    _Fill(Graphics, Color, Color): PrivateScope, Public, HideBySig
+    paint(Graphics, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    _CheckLine(Int32, Int32, Int32, Color, Color): PrivateScope, Public, HideBySig
+    compareColors(Color, Color): PrivateScope, Public, HideBySig
+    XORFill(): PrivateScope, Public, HideBySig
+    CohenSutherlandClipping(Rectangle, Graphics, Int32): PrivateScope, Public, HideBySig
+    computeOutcode(Int32, Int32, Rectangle): PrivateScope, Public, HideBySig
+    getColor(Int32, Int32): PrivateScope, Public, HideBySig
+    intersect(Point, Point, Point, Point): PrivateScope, Public, HideBySig
+    ccw(Point, Point, Point): PrivateScope, Public, HideBySig
+    checkProximity(Point): PrivateScope, Public, HideBySig
+    contains(Point): PrivateScope, Public, HideBySig
+    InitializeComponent(): PrivateScope, Public, HideBySig

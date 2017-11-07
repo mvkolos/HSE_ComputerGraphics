@@ -1,0 +1,23 @@
+﻿  SplinesForm.cpp
+d:\users\mvkol\downloads\cg_3_kolos\cg_3_kolos\SplinesForm.h(356): warning C4305: аргумент: усечение из "double" в "float"
+SplinesForm.cpp(84): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(85): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(114): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(135): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(136): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(139): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(140): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(161): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(182): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(183): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(185): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(200): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(201): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+SplinesForm.cpp(203): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(244): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(301): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(308): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+SplinesForm.cpp(321): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  Utils.cpp
+  Создание кода...
+  CG_3_Kolos.vcxproj -> D:\Users\mvkol\Downloads\CG_3_Kolos\Debug\CG_3_Kolos.exe

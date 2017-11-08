@@ -214,13 +214,18 @@ public:
 	//composed of cubic
 	void ComposedBezier(System::Drawing::Graphics ^g);
 	
-	bool composed = false;
+	//bool composed = false;
 	void ContinueLine();
 	//close bezier
 	void CloseBezier(System::Drawing::Graphics ^ g);
 	System::Collections::Generic::List<System::Drawing::Point> closure;
 
+	//move bezier
+	void rotatePointAround(int offset, int point);
+	void parallelDisplacement(int offset, int point);
+	
 	//overriden control	
 	void drawSpline(System::Drawing::Graphics^g) override;
+	void updateSpline(System::Drawing::Point &p) override;
 
 };

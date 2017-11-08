@@ -236,6 +236,10 @@ void ComposedBezierTool::ComposedBezier(System::Drawing::Graphics ^ g)
 
 void ComposedBezierTool::ContinueLine()
 {
+	if (special_indices.Contains(points.Count - 1))
+	{
+		return;
+	}
 	System::Drawing::Point last = points[points.Count - 1];
 	
 	System::Drawing::Point prelast = points[points.Count - 2];
@@ -273,12 +277,60 @@ void ComposedBezierTool::CloseBezier(System::Drawing::Graphics ^ g)
 	CubicBezier(g, -1);
 }
 
+void ComposedBezierTool::rotatePointAround(int offset, int point)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+void ComposedBezierTool::parallelDisplacement(int offset, int point)
+{
+	throw gcnew System::NotImplementedException();
+}
+
 void ComposedBezierTool::drawSpline(System::Drawing::Graphics ^ g)
 {
 	if (point_count >3&&point_count % 2 == 0)
 	{
 		ContinueLine();
 		ComposedBezier(g);
+	}
+}
+
+void ComposedBezierTool::updateSpline(System::Drawing::Point & p)
+{
+	System::Drawing::Point tmp = points[indexToMove];
+	points[indexToMove] = p;
+	/*if (indexToMove < 3)
+	{
+		return;
+	}*/
+	if (special_indices.Contains(indexToMove))
+	{
+		int delta_x = tmp.X - points[indexToMove - 1].X;
+		int delta_y = tmp.Y - points[indexToMove - 1].Y;
+		points[indexToMove - 2] = System::Drawing::Point(points[indexToMove - 1].X - delta_x,
+			points[indexToMove - 1].Y - delta_y);
+		return;
+	}
+	else {
+		if (special_indices.Contains(indexToMove + 1))
+		{
+			
+			//int a = p.Y - tmp.Y;
+			int x = p.X - points[indexToMove - 1].X;
+			int y = p.Y - points[indexToMove - 1].Y;
+			//float dist1 = System::Math::Sqrt(x*x + y*y);
+			
+			points[indexToMove + 1]= System::Drawing::Point(p.X+x ,
+				p.Y+y);
+			return;
+		}
+		else if (special_indices.Contains(indexToMove + 2)) {
+			int delta_x = points[indexToMove].X - points[indexToMove + 1].X;
+			int delta_y = points[indexToMove].Y - points[indexToMove + 1].Y;
+			points[indexToMove + 2] = System::Drawing::Point(points[indexToMove +1].X - delta_x,
+				points[indexToMove +1].Y - delta_y);
+		}
 	}
 }
 

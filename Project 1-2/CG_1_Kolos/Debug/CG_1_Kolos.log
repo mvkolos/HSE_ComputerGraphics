@@ -1,17 +1,17 @@
 ﻿  Utility.cpp
-Utility.cpp(461): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(546): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(547): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(463): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 Utility.cpp(548): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
 Utility.cpp(549): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(551): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-Utility.cpp(552): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+Utility.cpp(550): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(551): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(553): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
 Utility.cpp(554): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-Utility.cpp(555): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-Utility.cpp(579): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(584): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(590): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(595): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-Utility.cpp(601): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-Utility.cpp(607): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-  CG_1_Kolos.vcxproj -> D:\Users\mvkol\Documents\CG\HSE_ComputerGraphics\Project 1-2\Debug\CG_1_Kolos.exe
+Utility.cpp(556): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+Utility.cpp(557): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+Utility.cpp(581): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(586): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(592): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(597): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+Utility.cpp(603): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+Utility.cpp(609): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  CG_1_Kolos.vcxproj -> D:\Users\mvkol\GitHub\HSE_ComputerGraphics\Project 1-2\Debug\CG_1_Kolos.exe

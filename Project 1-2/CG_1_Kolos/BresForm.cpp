@@ -178,17 +178,8 @@ void CG_1_Kolos::BresForm::drawEllipse(Graphics ^g,Point center, int width,int h
 
 void CG_1_Kolos::BresForm::refresh()
 {
-	
-	//bm = gcnew Bitmap(pictureBox->Width, pictureBox->Height);
 	Graphics ^g = Graphics::FromImage(bm);
 	g->Clear(Color::White);
-	/*if (current_tool)
-	{
-		current_tool->bm = bm;
-	}*/
-	//pictureBox->Image = bm;
-	
-	delete g;
 	onRefresh = true;
 	pictureBox->Invalidate();
 	

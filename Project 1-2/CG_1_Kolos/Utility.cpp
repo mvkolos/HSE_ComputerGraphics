@@ -277,7 +277,7 @@ void EllipseTool::drawEllipse(System::Drawing::Graphics ^ g, System::Drawing::Po
 	int a_sq = a*a;
 	int b_sq = b*b;
 
-	int delta = b_sq + a_sq - 2 * a_sq*a / b;
+	int delta = b_sq + a_sq - 2 * a_sq * b;
 	int etta = 0;
 	int limit = 0;
 
@@ -408,6 +408,7 @@ void LineTool::ClosePolygon()
 	line_start = System::Drawing::Point(-1, -1);
 	polystart = System::Drawing::Point(-1, -1);
 	FillTool::XORFill_Border(System::Drawing::Graphics::FromImage(bm), System::Drawing::Color::Black, bm);
+	SceneContent::pixel_lines.Clear();
 	
 }
 void LineTool::drawLine(System::Drawing::Graphics ^ g, System::Drawing::Point start, System::Drawing::Point end, bool save, bool xor)
@@ -419,6 +420,7 @@ void LineTool::drawLine(System::Drawing::Graphics ^ g, System::Drawing::Point st
 	{
 		return;
 	}
+
 	int signY = 1;
 	int signX = 1;
 

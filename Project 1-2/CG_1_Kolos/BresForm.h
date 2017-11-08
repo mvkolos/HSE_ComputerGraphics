@@ -202,12 +202,12 @@ namespace CG_1_Kolos {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonPolygon = (gcnew System::Windows::Forms::Button());
-			this->buttonIntersect = (gcnew System::Windows::Forms::Button());
 			this->buttonRect = (gcnew System::Windows::Forms::Button());
 			this->buttonFill = (gcnew System::Windows::Forms::Button());
 			this->buttonLine = (gcnew System::Windows::Forms::Button());
 			this->buttonEllipse = (gcnew System::Windows::Forms::Button());
 			this->buttonCircle = (gcnew System::Windows::Forms::Button());
+			this->buttonIntersect = (gcnew System::Windows::Forms::Button());
 			this->textBoxDebug = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
 			this->menuStrip1->SuspendLayout();
@@ -318,16 +318,6 @@ namespace CG_1_Kolos {
 			this->buttonPolygon->UseVisualStyleBackColor = true;
 			this->buttonPolygon->Click += gcnew System::EventHandler(this, &BresForm::buttonPolygon_Click);
 			// 
-			// buttonIntersect
-			// 
-			this->buttonIntersect->Location = System::Drawing::Point(49, 636);
-			this->buttonIntersect->Name = L"buttonIntersect";
-			this->buttonIntersect->Size = System::Drawing::Size(57, 23);
-			this->buttonIntersect->TabIndex = 7;
-			this->buttonIntersect->Text = L"intersect";
-			this->buttonIntersect->UseVisualStyleBackColor = true;
-			this->buttonIntersect->Click += gcnew System::EventHandler(this, &BresForm::buttonIntersect_Click);
-			// 
 			// buttonRect
 			// 
 			this->buttonRect->FlatStyle = System::Windows::Forms::FlatStyle::System;
@@ -383,12 +373,24 @@ namespace CG_1_Kolos {
 			this->buttonCircle->UseVisualStyleBackColor = false;
 			this->buttonCircle->Click += gcnew System::EventHandler(this, &BresForm::buttonCircle_Click);
 			// 
+			// buttonIntersect
+			// 
+			this->buttonIntersect->Location = System::Drawing::Point(49, 636);
+			this->buttonIntersect->Name = L"buttonIntersect";
+			this->buttonIntersect->Size = System::Drawing::Size(57, 23);
+			this->buttonIntersect->TabIndex = 7;
+			this->buttonIntersect->Text = L"intersect";
+			this->buttonIntersect->UseVisualStyleBackColor = true;
+			this->buttonIntersect->Visible = false;
+			this->buttonIntersect->Click += gcnew System::EventHandler(this, &BresForm::buttonIntersect_Click);
+			// 
 			// textBoxDebug
 			// 
 			this->textBoxDebug->Location = System::Drawing::Point(176, 667);
 			this->textBoxDebug->Name = L"textBoxDebug";
 			this->textBoxDebug->Size = System::Drawing::Size(400, 20);
 			this->textBoxDebug->TabIndex = 26;
+			this->textBoxDebug->Visible = false;
 			// 
 			// BresForm
 			// 
@@ -423,6 +425,7 @@ namespace CG_1_Kolos {
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		refresh();
+		//current_tool->bm = bm;
 	}
 
 

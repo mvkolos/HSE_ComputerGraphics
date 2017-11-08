@@ -24,20 +24,29 @@ public:
 	void drawCurve(System::Drawing::Graphics ^ g, System::Collections::Generic::List<System::Drawing::Point>^ curve)
 	{
 		System::Drawing::Pen ^p = System::Drawing::Pens::Black;
-
+		if (overlay)
+		{
+			p = System::Drawing::Pens::Red;
+		}
 		clear();
 		drawPoints(g);
 		int n = curve->Count;
 		for (int i = 0; i < n - 1; i++)
 		{
+			/*if (i == n - 3 &&closed)
+			{
+				break;
+			}*/
 			g->DrawLine(p, curve[i], curve[i + 1]);
 		}
+
 		g->DrawImage(bm, 0, 0);
 
 	}
 	void drawPoints(System::Drawing::Graphics ^ g)
 	{
 		System::Drawing::Pen ^p = System::Drawing::Pens::Black;
+		
 		for (int i = 0; i < points.Count; i++)
 		{
 			if (special_indices.Contains(i))
@@ -48,18 +57,31 @@ public:
 			{
 				g->DrawEllipse(p, points[i].X, points[i].Y, 3, 3);
 			}
-			if (i < points.Count - 1)
+			if (i < points.Count - 1-offset)
 			{
 				g->DrawLine(System::Drawing::Pens::LightGray, points[i], points[i + 1]);
 			}
 		}
 
 	}
-
+	void reset()
+	{
+		System::Drawing::Graphics ^g = System::Drawing::Graphics::FromImage(bm);
+		g->Clear(System::Drawing::Color::White);
+		points.Clear();
+		special_indices.Clear();
+		closure.Clear();
+		spline->Clear();
+		//System::Drawing::Bitmap ^ b = gcnew System::Drawing::Bitmap(width, height);
+		//g->DrawImage(b, 0, 0);
+	}
+	int offset = 0;
+	bool overlay = false;
 	//points on the screen
 	static System::Collections::Generic::List<System::Drawing::Point> points;
 	int point_count = 0;
 	System::Collections::Generic::List<int> special_indices;
+	
 	//interactivity
 	int indexToMove = -1;
 	bool onMove = false;
@@ -73,7 +95,12 @@ public:
 		//drawSpline();
 	}
 	
-
+	//close bezier
+	virtual void CloseSpline(System::Drawing::Graphics ^ g) {
+		
+	};
+	bool closed = false;
+	System::Collections::Generic::List<System::Drawing::Point> closure;
 	//bitmap info
 	int width, height;
 	System::Drawing::Bitmap ^bm;
@@ -88,9 +115,7 @@ public:
 		System::Drawing::Graphics^g = System::Drawing::Graphics::FromImage(bm);
 		g->Clear(System::Drawing::Color::White);
 	}
-	virtual void drawSpline(System::Drawing::Graphics^g) {
-		int b = 6;
-	}
+	virtual void drawSpline(System::Drawing::Graphics^g) {}
 	
 	//mouse event handlers
 	virtual System::Windows::Forms::Cursor^ HandleMouseMove(System::Windows::Forms::MouseEventArgs^  e)
@@ -157,21 +182,11 @@ public:
 		}
 	}
 	virtual void Draw(System::Windows::Forms::PaintEventArgs ^ e)
-	{
-		System::Drawing::Bitmap ^tmp;
-		System::Drawing::Graphics ^g;
-		if (canMove&&onMove)
+	{if (canMove&&onMove)
 		{
-			//tmp = gcnew System::Drawing::Bitmap(bm);
 			clear();
-			
-			//drawSpline(g);
 		}
-		else
-		{
-			tmp = bm;
-		}
-		g = System::Drawing::Graphics::FromImage(bm);
+		System::Drawing::Graphics ^g = System::Drawing::Graphics::FromImage(bm);
 		drawSpline(g);
 		e->Graphics->DrawImage(bm, 0, 0);
 	}
@@ -216,16 +231,37 @@ public:
 	
 	//bool composed = false;
 	void ContinueLine();
-	//close bezier
-	void CloseBezier(System::Drawing::Graphics ^ g);
-	System::Collections::Generic::List<System::Drawing::Point> closure;
+	void CloseSpline(System::Drawing::Graphics ^ g) override;
 
 	//move bezier
-	void rotatePointAround(int offset, int point);
-	void parallelDisplacement(int offset, int point);
+	/*void rotatePointAround(int offset, int point);
+	void parallelDisplacement(int offset, int point);*/
 	
 	//overriden control	
 	void drawSpline(System::Drawing::Graphics^g) override;
 	void updateSpline(System::Drawing::Point &p) override;
 
+};
+ref class BSplineTool:public Tool {
+public:
+	BSplineTool(System::Drawing::Bitmap ^b) :Tool(b) {
+		CacheBSplineCoeffs(0.03);
+	}
+	void ElemntaryBSpline(System::Drawing::Graphics ^ g, int offset);
+	float* CoeffsBSpline(float t);
+	System::Drawing::Point CoordBSpline(int offset, int i);
+	void CacheBSplineCoeffs(float step);
+
+
+	float**bspline_basis = new float*[4]{ new float[4]{ 1,-3,3,-1 },
+		new float[4]{ 4,0,-6,3 },
+		new float[4]{ 1,3,3,-3 },
+		new float[4]{ 0,0,0,1 } };
+
+
+	float **b_spline_coeffs;
+	float B_Spline_Count = 0;
+
+	void drawSpline(System::Drawing::Graphics^g) override;
+	void CloseSpline(System::Drawing::Graphics ^ g) override;
 };

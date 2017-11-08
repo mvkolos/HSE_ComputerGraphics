@@ -157,18 +157,20 @@ namespace CG_3_Kolos {
 			// 
 			// buttonClose
 			// 
-			this->buttonClose->Location = System::Drawing::Point(481, 136);
+			this->buttonClose->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->buttonClose->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->buttonClose->Location = System::Drawing::Point(481, 250);
 			this->buttonClose->Name = L"buttonClose";
 			this->buttonClose->Size = System::Drawing::Size(100, 23);
 			this->buttonClose->TabIndex = 1;
 			this->buttonClose->Text = L"close";
-			this->buttonClose->UseVisualStyleBackColor = true;
+			this->buttonClose->UseVisualStyleBackColor = false;
 			this->buttonClose->Click += gcnew System::EventHandler(this, &SplinesForm::button1_Click);
 			// 
 			// checkBoxAlg
 			// 
 			this->checkBoxAlg->AutoSize = true;
-			this->checkBoxAlg->Location = System::Drawing::Point(481, 175);
+			this->checkBoxAlg->Location = System::Drawing::Point(481, 133);
 			this->checkBoxAlg->Name = L"checkBoxAlg";
 			this->checkBoxAlg->Size = System::Drawing::Size(69, 17);
 			this->checkBoxAlg->TabIndex = 2;
@@ -189,7 +191,7 @@ namespace CG_3_Kolos {
 			// checkBoxComposed
 			// 
 			this->checkBoxComposed->AutoSize = true;
-			this->checkBoxComposed->Location = System::Drawing::Point(481, 212);
+			this->checkBoxComposed->Location = System::Drawing::Point(481, 159);
 			this->checkBoxComposed->Name = L"checkBoxComposed";
 			this->checkBoxComposed->Size = System::Drawing::Size(75, 17);
 			this->checkBoxComposed->TabIndex = 4;
@@ -225,17 +227,17 @@ namespace CG_3_Kolos {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(481, 281);
+			this->button1->Location = System::Drawing::Point(93, 25);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(100, 23);
 			this->button1->TabIndex = 7;
-			this->button1->Text = L"cast. b";
+			this->button1->Text = L"draw Casteljau";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &SplinesForm::button1_Click_1);
 			// 
 			// button_b_spline
 			// 
-			this->button_b_spline->Location = System::Drawing::Point(481, 333);
+			this->button_b_spline->Location = System::Drawing::Point(481, 191);
 			this->button_b_spline->Name = L"button_b_spline";
 			this->button_b_spline->Size = System::Drawing::Size(100, 23);
 			this->button_b_spline->TabIndex = 8;
@@ -284,11 +286,8 @@ namespace CG_3_Kolos {
 
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		Graphics^ g = Graphics::FromImage(bm);
-		if (pointCount > 3)
-		{
-			//CloseBezier(g);
-		}
+		t->CloseSpline(Graphics::FromImage(bm));
+		pictureBox->Invalidate();
 		/*
 		BezierDeCasteljau(g);
 		pictureBox->Invalidate();*/
@@ -304,7 +303,8 @@ namespace CG_3_Kolos {
 
 	private: System::Void buttonClear_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		t->clear();
+		t->reset();
+		pictureBox->Invalidate();
 	}
 
 	private: System::Void checkBoxAlg_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -331,6 +331,13 @@ namespace CG_3_Kolos {
 	}
 			 //TO DO
 	private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {//draw decast. overlay
+	//t = gcnew NBezierTool(bm);
+		t->deCasteljau = !t->deCasteljau;
+		t->overlay = !t->overlay;
+		//Bitmap ^t_bm = gcnew Bitmap(bm);
+		//tmp->BezierDeCasteljau(Graphics::FromImage(bm));
+		
+		pictureBox->Invalidate();
 		//deCasteljau = true;
 		//NBezier(Graphics::FromImage(bm));
 		//BezierDeCasteljau(Graphics::FromImage(bm));
@@ -340,21 +347,22 @@ namespace CG_3_Kolos {
 		t->Draw(e);
 	}
 	private: System::Void button_b_spline_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (points.Count > 3)
-		{
-			System::Collections::Generic::List<Point> ^p=gcnew System::Collections::Generic::List<Point>(4);
-			for (int i = 0; i < 4; i++)
-			{
-				p->Add(points[points.Count - 4 + i]);
-			}
-			CacheBSplineCoeffs(0.03);
-			ElemntaryBSpline(p);
-			drawCurve(Graphics::FromImage(bm), b_spline);
-		}
+		t = gcnew BSplineTool(bm);
+		//if (points.Count > 3)
+		//{
+		//	System::Collections::Generic::List<Point> ^p=gcnew System::Collections::Generic::List<Point>(4);
+		//	for (int i = 0; i < 4; i++)
+		//	{
+		//		p->Add(points[points.Count - 4 + i]);
+		//	}
+		//	//CacheBSplineCoeffs(0.03);
+		//	ElemntaryBSpline(p);
+		//	drawCurve(Graphics::FromImage(bm), b_spline);
+		//}
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (t) {
-			t->canMove = true;
+			t->canMove = !t->canMove;
 		}
 	}
 private: System::Void pictureBox_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {

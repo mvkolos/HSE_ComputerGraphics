@@ -97,6 +97,7 @@ void NBezierTool::drawSpline(System::Drawing::Graphics ^ g)
 	{
 		return;
 	}
+	
 	if (spline) {
 		spline->Clear();
 	}
@@ -256,36 +257,35 @@ void ComposedBezierTool::ContinueLine()
 }
 
 
-void ComposedBezierTool::CloseBezier(System::Drawing::Graphics ^ g)
+void ComposedBezierTool::CloseSpline(System::Drawing::Graphics ^ g)
 {
-	if (points.Count % 2 != 0)
+	if (point_count % 2 != 0)
 	{
 		ContinueLine();
 	}
-
+	
 	float deltaX = points[0].X - points[1].X;
 	float deltaY = points[0].Y - points[1].Y;
 
 	System::Drawing::Point next = System::Drawing::Point(points[0].X + deltaX, points[0].Y + deltaY);
 
 	closure.Clear();
-	closure.Add(points[0]);
-	closure.Add(next);
-	closure.Add(points[points.Count - 1]);
 	closure.Add(points[points.Count - 2]);
-
+	closure.Add(points[points.Count - 1]);
+	closure.Add(next);
+	closure.Add(points[0]);
+	
+	
+	
+	
+	points.Add(next);
+	points.Add(points[0]);
+	
+	closed = true;
 	CubicBezier(g, -1);
 }
 
-void ComposedBezierTool::rotatePointAround(int offset, int point)
-{
-	throw gcnew System::NotImplementedException();
-}
 
-void ComposedBezierTool::parallelDisplacement(int offset, int point)
-{
-	throw gcnew System::NotImplementedException();
-}
 
 void ComposedBezierTool::drawSpline(System::Drawing::Graphics ^ g)
 {
@@ -377,6 +377,106 @@ int Tool::getClosest(System::Drawing::Point &current,int radius)
 	}
 	return -1;
 }
+void BSplineTool::ElemntaryBSpline(System::Drawing::Graphics ^ g, int offset)
+{
+	for (int i = 0; i < B_Spline_Count; i++)
+	{
+		System::Drawing::Point next = CoordBSpline(offset, i);
+		spline->Add(next);
+	};
+	drawCurve(g, spline);
+
+}
+
+
+float* BSplineTool::CoeffsBSpline(float t)
+{
+	float t_2 = t*t;
+	float**v = new float*[4]{
+		new float[1]{ 1 },
+		new float[1]{ t },
+		new float[1]{ t_2 },
+		new float[1]{ t_2*t }
+	};
+	float* coeffs = new float[4];
+	float**res = Utils::MatMul(bspline_basis, v, new int[2]{ 4,4 }, new int[2]{ 4,1 });
+	//float* coeffs = new float[4];
+	for (int i = 0; i < 4; i++)
+	{
+		coeffs[i] = res[i][0];
+	}
+	/*float t_3 = t_2*t;
+	coeffs[0] = (1 - t)*(1 - t)*(1 - t);
+	coeffs[1] = (3 * t_3 - 6 * t_2 + 4);
+	coeffs[2] = 3 * (t_2 + t - t_3) + 1;
+	coeffs[3] = t_3;*/
+	return coeffs;
+}
+
+System::Drawing::Point BSplineTool::CoordBSpline(int offset, int ix)
+{
+	float resx = 0;
+	float resy = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		resx += b_spline_coeffs[ix][i] * points[i+offset].X;
+		resy += b_spline_coeffs[ix][i] * points[i+offset].Y;
+	}
+	resx /= 6;
+	resy /= 6;
+	return System::Drawing::Point(resx, resy);
+}
+
+void BSplineTool::CacheBSplineCoeffs(float step)
+{
+	int len = 1 / step + 1;
+	b_spline_coeffs = new float*[len];
+	float t = 0;
+	int i = 0;
+	for (i; i < len; i++)
+	{
+		b_spline_coeffs[i] = CoeffsBSpline(t);
+		t += step;
+		if (t > 1)
+		{
+			break;
+		}
+	}
+	B_Spline_Count = len;
+}
+
+void BSplineTool::drawSpline(System::Drawing::Graphics ^ g)
+{
+	int n = points.Count-4;// point_count;
+	spline->Clear();
+	if (n == 0)
+	{
+		ElemntaryBSpline(g, 0);
+	}
+	for (int i = 0; i <n; i ++)
+	{
+		ElemntaryBSpline(g,i);
+	}
+	
+}
+
+void BSplineTool::CloseSpline(System::Drawing::Graphics ^ g)
+{
+	int n = points.Count - 3;
+	for (int i = 0; i < 3; i++)
+	{
+		points.Add(points[i]);
+	}
+	offset = 1;
+	int count = 0;
+	for (int i = n; i <points.Count-3; i++)
+	{
+		ElemntaryBSpline(g, i);
+		count++;
+	}
+	int y = count;
+}
+
 
 //System::Windows::Forms::Cursor ^ NBezierTool::HandleMouseMove(System::Windows::Forms::MouseEventArgs ^ e)
 //{
